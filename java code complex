@@ -1,0 +1,72 @@
+package pr1;
+import java.util.*;
+class Complex
+{
+	   int real, imaginary;
+	   
+	   Complex(){}  //default constructor same name as class name
+	       Complex(int tempReal, int tempImaginary)
+	       {
+	           real = tempReal;
+	           imaginary = tempImaginary;
+	       }
+	   
+	   
+	   Complex addComp(Complex C1, Complex C2)
+	   {
+	       Complex temp = new Complex();
+	       temp.real = C1.real + C2.real;
+	       temp.imaginary = C1.imaginary + C2.imaginary;
+	       return temp;
+	   }
+	   
+	   Complex subtractComp(Complex C1, Complex C2)
+	   {
+	       Complex temp = new Complex();
+	       temp.real = C1.real - C2.real;
+	       temp.imaginary = C1.imaginary - C2.imaginary;
+	       return temp;
+	   }
+	   Complex multComp(Complex C1, Complex C2)
+	   {
+	       Complex temp = new Complex();
+	       temp.real = C1.real * C2.real;
+	       temp.imaginary = C1.imaginary * C2.imaginary;
+	       return temp;
+	   }
+	   
+	   void printComplexNumber()
+	   {
+	       System.out.println("Complex Number:" + real + "+" + imaginary + "i");
+	   }
+	}
+	public class complex_numb_Add_Mul
+	{
+	   public static void main(String[] args)
+	   {
+		   
+	       Complex c1 = new Complex(9,2);
+	       c1.printComplexNumber();
+	       Complex c2 = new Complex(9,6);
+	       c2.printComplexNumber();
+	       System.out.println("__________________________");
+	       
+	       Complex c3 = new Complex();
+	       c3 = c3.addComp(c1, c2);
+	       
+	       System.out.println("1.Addition");
+	       c3.printComplexNumber();
+	       System.out.println("__________________________");
+	       
+	       c3 = c3.subtractComp(c1, c2);
+	       System.out.println("2.Substraction");
+	       c3.printComplexNumber();
+	       System.out.println("__________________________");
+	       
+	       c3 = c3.multComp(c1, c2);
+	       System.out.println("3.Multiplication");
+	       c3.printComplexNumber();
+	       System.out.println("__________________________");
+	       
+	   }
+	}
